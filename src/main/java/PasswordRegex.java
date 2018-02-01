@@ -47,13 +47,13 @@ public class PasswordRegex {
          */
         final String PASSWORD_REGEX = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[\\\\!\"#$%&\'()*+,-./:;<=>?@\\[\\]|^_`{}~])(?=\\S+$).{8,}$";
 
-        final List<String> correctPasswords = Arrays.asList("", "       ", "4444", "77777777", "qqqqqqqq", "QQQQQQQQ", "Qw777777",
+        final List<String> incorrectPasswords = Arrays.asList("", "       ", "4444", "77777777", "qqqqqqqq", "QQQQQQQQ", "Qw777777",
                 "_-++++++++", "!qqqqqqq", "!QQQQQQQ", "Qw_ 77777");
 
-        correctPasswords.stream()
-                .forEach(correctPassword -> {
-                            System.out.println(correctPassword + ": " + !correctPassword.matches(PASSWORD_REGEX));
-//                            Assert.assertEquals(true, !correctPassword.matches(PASSWORD_REGEX));
+        incorrectPasswords.stream()
+                .forEach(incorrectPassword -> {
+                            System.out.println(incorrectPassword + ": " + !incorrectPassword.matches(PASSWORD_REGEX));
+//                            Assert.assertEquals(true, !incorrectPassword.matches(PASSWORD_REGEX));
                         }
                 );
     }
